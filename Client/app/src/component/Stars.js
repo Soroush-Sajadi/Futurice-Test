@@ -30,6 +30,7 @@ export default class Stars extends Component {
               console.log(this.state.owner)
               
               
+              
       }
       
       render() {
