@@ -62,6 +62,7 @@
     -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    background-color: #ea457d;
 }
 .wrap-follower {
     width: 50%;
@@ -69,6 +70,7 @@
 }
 .wrap-follower button {
     text-align: center;
+    margin-top: 300px;
 }
 .follow-number {
     text-align: center;
@@ -98,3 +100,26 @@
 .name-follower {
     text-align: center;
 }
+.stars-wraper {
+    
+    
+}
+ .stars-pic {
+    width: 127px;
+    height: 117px;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    
+ }
+ .stars {
+    border: 1px solid black;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+ }

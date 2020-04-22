@@ -1,59 +1,54 @@
 import React, {Component} from "react";
-import Followers from './Followers';
-import Following from './Following';
 
 
-export default class Stars extends Component {
+export default class Followers extends Component {
     constructor(props) {
         super(props);
         this.state = {
           data: [],
-          input: null,
-          pic:null,
-          owner: null
+          name : [],
+          watchers: null,
+          pic: null,
+          forks: null
         };
-      }      
+      }
 
-      handleChange = (e) => {
-        this.setState({ input: e.target.value });
-      }
-    
-       handleClick = async() => {
-            await fetch(`http://localhost:3000/${this.state.input}`, {headers: {
-              'Access-Control-Allow-Origin': '*'
-            }})
-              .then(response => response.json())
-              .then(data => { this.setState( { data } )
-              });
-              this.setState({pic: this.state.data[0].owner.avatar_url});
-              this.setState({owner: this.state.data[0].owner.login})
-              console.log(this.state.data)
-      }
-      
-      render() {
-          
-        return (  
-            <div className="wrap">
-                <div className="input-wraper">
-                <input className="input" type="text" placeholder="How many stars?" onChange={ this.handleChange } />
-                <input className="button" type="button" value="Search" onClick={this.handleClick} />
-                </div>
-                <div className="user-pro">
-                <img className="img" src={this.state.pic}/>
-                <h3>{this.state.owner}</h3>
-                </div>
+    componentDidMount = async() => {
+        await fetch(`http://localhost:3000/api/stars`, {headers: {
+            'Access-Control-Allow-Origin': '*'
+        }})
+            .then(response => response.json())
+            .then(data => { this.setState( { data } )
+            })
+            this.setState({name: this.state.data})
+           
+    }
+
+
+    render() {
+        if (this.state.name.items !== undefined) {
+    return (  
+        <div>
+             <div className="stars-wraper">
+                 {this.state.data.items.map(item => <div className="stars"> 
+                    <img className="stars-pic" src={item.owner.avatar_url}/>
+                    <div>
+                    <h3>{item.name}</h3>
+                    <h3>{item.forks}</h3>
+                    <h3>{item.watchers}</h3>
+                    </div>
+                 </div>
+                    )}
+             </div>
                 
-                
-                <div className="wraper-user-info">
-                {this.state.data.map(item =><div className="user-info"> 
-                <h4>Project Name:</h4>
-                
-                <p>{item.name}</p>
-                </div>)}
-                </div>
-                <Followers name={this.state.owner} />
-                <Following name={this.state.owner} />
+        </div>
+        )
+    }else {
+        return (
+            <div>
+
             </div>
         )
     }
+        }
 }

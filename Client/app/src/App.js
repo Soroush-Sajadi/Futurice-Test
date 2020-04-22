@@ -1,12 +1,13 @@
 import React from 'react';
+import Rep from './component/Rep'
 import Stars from './component/Stars'
-import Followers from './component/Followers'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Stars />
+      <Rep />
     </div>
   );
 }
