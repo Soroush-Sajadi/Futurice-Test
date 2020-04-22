@@ -1,0 +1,100 @@
+.input-wraper {
+    text-align: center;
+    margin-top: 80px;
+}
+.input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 300px;
+}
+.button {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 19px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+    margin-left: 20px;
+}
+
+.button:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+.user-pro{
+    text-align: center;
+    margin-top: 50px;
+}
+.img {
+    width: 127px;
+    height: 117px;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    text-align: center;
+}
+.wraper-user-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.user-info {
+    border: 1px solid black;
+    margin: 20px;
+    width: 150px;
+    height: 170px;
+    text-align: center;
+    -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+}
+.wrap-follower {
+    width: 50%;
+    float: right;
+}
+.wrap-follower button {
+    text-align: center;
+}
+.follow-number {
+    text-align: center;
+}
+.wraper-follower {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    margin-left: 10px;
+    
+    
+}
+.img-follower {
+    width: 127px;
+    height: 117px;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    text-align: center;
+    margin: 20px;
+}
+.name-follower {
+    text-align: center;
+}
