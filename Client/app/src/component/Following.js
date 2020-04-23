@@ -7,16 +7,30 @@ export default class Following extends Component {
         this.state = {
           data: [],
         };
+        console.log(props)
       }
 
-    handleClick = async() => {
-        await fetch(`http://localhost:3000/following/${this.props.name}`, {headers: {
-            'Access-Control-Allow-Origin': '*'
-        }})
-            .then(response => response.json())
-            .then(data => { this.setState( { data } )
-            })       
-    }
+      getData = async(name) => {
+        await fetch(`http://localhost:3000/following/${name}`, {headers: {
+              'Access-Control-Allow-Origin': '*'
+          }})
+              .then(response => response.json())
+              .then(data => { this.setState( { data } )
+              })
+      }
+      componentDidMount = async () =>{
+        if (this.props.name !== null) {
+          this.getData(this.props.name)
+        } else {
+          setTimeout(this.componentDidMount, 250)
+        }    
+      
+      }
+      async componentDidUpdate(prevProps) {
+        if (prevProps.name !== this.props.name) {
+          this.getData(this.props.name)
+        }
+      };
 
    // click = async (event) =>{
     //console.log(event.target.getAttribute('attr'))
@@ -32,12 +46,11 @@ export default class Following extends Component {
         if (this.props.name !==null) {
     return (  
         <div className="wrap-follower">
-        <input className="button" type="button" value="following" onClick={this.handleClick} />
-        {this.state.data.length !== 0 ? (<p className="follow-number">Following: {this.state.data.length}</p>):null}
-        <div className="wraper-follower">
-        {this.state.data.map(item => <div className="follower">
-        <img className="img-follower" attr ={item.login} onClick={this.click} src={item.avatar_url}/>
-        <p className="name-follower">{item.login}</p>
+            {this.state.data.length !== 0 ? (<p className="follow-number">Following: {this.state.data.length}</p>):null}
+            <div className="wraper-follower">
+                {this.state.data.map(item => <div className="follower">
+                <img className="img-follower" attr ={item.login} onClick={this.click} src={item.avatar_url}/>
+                <p className="name-follower">{item.login}</p>
         </div>
         )}
         </div>

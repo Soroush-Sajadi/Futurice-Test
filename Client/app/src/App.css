@@ -80,9 +80,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
-    box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    
     margin-left: 10px;
     
     
@@ -101,20 +99,21 @@
     text-align: center;
 }
 .stars-wraper {
-    
+   height: 220px;
+   margin-top: 40px;
+   display: flex;
+   
     
 }
  .stars-pic {
     width: 127px;
     height: 117px;
     border-radius: 5px;
-    -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
-    box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    width: 40%;
     
+    height: 100%;
  }
  .stars {
-    border: 1px solid black;
     margin: 20px;
     display: flex;
     flex-direction: row;
@@ -122,5 +121,25 @@
     justify-content: center;
     text-align: center;
     width: 30%;
-    float: right;
+    -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    
  }
+
+ .stars-info {
+     width: 60%;
+ }
+ .follow {
+     cursor: pointer;
+     font-family: bold;
+ }
+
+ .follow:hover {
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+ }
+ .follow:active {
+	
+	top:1px;
+}
