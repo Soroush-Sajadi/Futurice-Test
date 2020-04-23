@@ -58,7 +58,6 @@ export default class Followers extends Component {
           </div>
           )}
           </div>
-      <p>{this.props.name}</p>
           </div>
         )
           } else {

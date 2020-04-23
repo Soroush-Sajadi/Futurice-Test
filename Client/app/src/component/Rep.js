@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import Followers from './Followers';
 import Following from './Following';
-import ProjectInfo from './ProjectInfo';
 
 
 export default class Rep extends Component {
@@ -31,11 +30,6 @@ export default class Rep extends Component {
               this.setState({pic: this.state.data[0].owner.avatar_url});
               this.setState({owner: this.state.data[0].owner.login})
       }
-
-      click = (event) => {
-        console.log(event.target.getAttribute("attr"))
-        this.setState({ projectName : event.target.getAttribute("attr")})
-      }
       
       render() {
           
@@ -52,9 +46,9 @@ export default class Rep extends Component {
                 
                 
                 <div className="wraper-user-info">
-                {this.state.data.map(item => <div attr={item.name} onClick= {this.click}  className="user-info"> 
-                <h4 attr={item.name} onClick= {this.click} >Project Name:</h4>
-                <p attr={item.name} onClick= {this.click} >{item.name}</p>
+                {this.state.data.map(item => <div className="user-info"> 
+                <h4 >Project Name:</h4>
+                <p >{item.name}</p>
                 </div> )}
                 </div>
                 <Followers name={this.state.owner } />
