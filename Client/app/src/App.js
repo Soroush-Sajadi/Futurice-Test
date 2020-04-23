@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h2 className="title">Github Acount Motor Search</h2>
+      <h2 className="title">Github Account Motor Search</h2>
       <Stars />
       <Rep />
     </div>
