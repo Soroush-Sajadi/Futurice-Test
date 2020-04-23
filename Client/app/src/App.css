@@ -71,9 +71,6 @@
     text-align: center;
     margin-top: 300px;
 }
-.follow-number {
-    text-align: center;
-}
 .wraper-follower {
     display: flex;
     flex-direction: row;
@@ -111,6 +108,7 @@
     width: 40%;
     
     height: 100%;
+    background-color: #8699ff;
  }
  .stars {
     margin: 20px;
@@ -123,6 +121,7 @@
     -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+    background-color: #8699ff;
     
  }
 
@@ -148,4 +147,15 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     border-bottom: 1px solid blue;
+}
+
+.follower-number {
+    font-size:larger ;
+    color: blue;
+    text-align: center;
+}
+.following-number {
+    font-size:larger ;
+    color: red;
+    text-align: center;
 }

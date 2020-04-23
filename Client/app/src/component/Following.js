@@ -46,7 +46,7 @@ export default class Following extends Component {
         if (this.props.name !==null) {
     return (  
         <div className="wrap-follower">
-            {this.state.data.length !== 0 ? (<p className="follow-number">Following: {this.state.data.length}</p>):null}
+            {this.state.data.length !== 0 ? (<p className="following-number">Following: {this.state.data.length}</p>):null}
             <div className="wraper-follower">
                 {this.state.data.map(item => <div className="follower">
                 <img className="img-follower" attr ={item.login} onClick={this.click} src={item.avatar_url}/>
