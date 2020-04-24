@@ -49,7 +49,7 @@ export default class Followers extends Component {
     render() {
         if (this.props.name !==null) {
       return (  
-          <div className="wrap-follower">
+          <div className="wrap-follow">
             {this.state.data.length !== 0 ? (<p className="follower-number">Followers: {this.state.data.length}</p>):null}
           <div className="info-follow">
             {this.state.data.map((item) => <div  className="follower">
