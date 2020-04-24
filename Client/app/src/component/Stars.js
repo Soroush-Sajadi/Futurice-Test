@@ -31,9 +31,9 @@ export default class Followers extends Component {
                  {this.state.data.items.map(item => <div className="stars"> 
                     <img className="stars-pic" src={item.owner.avatar_url}/>
                     <div className="stars-info">
-                    <h3>Name: {item.name}</h3>
-                    <h3>Forks: {item.forks}</h3>
-                    <h3>Watchers: {item.watchers}</h3>
+                    <h4>Name: {item.name}</h4>
+                    <h4>Forks: {item.forks}</h4>
+                    <h4>Watchers: {item.watchers}</h4>
                     </div>
                  </div>
                     )}

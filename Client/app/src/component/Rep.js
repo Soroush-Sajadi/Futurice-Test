@@ -30,26 +30,31 @@ export default class Rep extends Component {
               this.setState({pic: this.state.data[0].owner.avatar_url});
               this.setState({owner: this.state.data[0].owner.login})
       }
+      click = (event) => {
+        this.setState({projectName: event.target.getAttribute('attr')})
+        console.log(this.state.projectName)
+      }
       
       render() {
           
         return (  
             <div className="wrap">
-                <div className="input-wraper">
+                <div className="wraper-input-rep">
                 <input className="input" type="text" placeholder="Who are you looking for?" onChange={ this.handleChange } />
                 <input className="button" type="button" value="Search" onClick={this.handleClick} />
                 </div>
-                <div className="user-pro">
+                <div className="user-profile-rep">
                 {this.state.pic !== null ? (<img className="img" src={this.state.pic}/>): null}
                 <h3>{this.state.owner}</h3>
                 </div>
                 
                 
-                <div className="wraper-user-info">
-                {this.state.data.map(item => <div className="user-info"> 
+                <div className="wraper-user-info-rep">
+                {this.state.data.map(item => <a attr={item.name} style={{display: "table-cell"}} onClick={this.click}  target={'_blank'} 
+                href={`https://github.com/${this.state.owner}/${this.state.projectName }` } className="user-info-rep"> 
                 <h4 >Project Name:</h4>
                 <p >{item.name}</p>
-                </div> )}
+                </a >)}
                 </div>
                 <Followers name={this.state.owner } />
                 <Following name={this.state.owner} />

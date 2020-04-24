@@ -51,10 +51,10 @@ export default class Followers extends Component {
       return (  
           <div className="wrap-follower">
             {this.state.data.length !== 0 ? (<p className="follower-number">Followers: {this.state.data.length}</p>):null}
-          <div className="wraper-follower">
-            {this.state.data.map(item => <div className="follower">
-            <img className="img-follower" attr ={item.login} onClick={this.click} src={item.avatar_url}/>
-            <p className="name-follower">{item.login}</p>
+          <div className="info-follow">
+            {this.state.data.map((item) => <div  className="follower">
+            <img className="img-follow" attr ={item.login} onClick={this.click} src={item.avatar_url}/>
+            <p className="name-follow">{item.login}</p>
           </div>
           )}
           </div>

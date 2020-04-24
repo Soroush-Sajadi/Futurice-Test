@@ -1,6 +1,6 @@
-.input-wraper {
+.wraper-input-rep {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 63px;
 }
 .input {
     border-top: none;
@@ -33,7 +33,7 @@
 	position:relative;
 	top:1px;
 }
-.user-pro{
+.user-profile-rep{
     text-align: center;
     margin-top: 50px;
 }
@@ -45,14 +45,14 @@
     box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     text-align: center;
 }
-.wraper-user-info {
+.wraper-user-info-rep {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     
 }
-.user-info {
+.user-info-rep {
     border: 1px solid black;
     margin: 20px;
     width: 150px;
@@ -63,7 +63,7 @@
     box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     background-color: #ea457d;
 }
-.wrap-follower {
+.info-follow {
     width: 50%;
     float: right;
 }
@@ -81,7 +81,7 @@
     
     
 }
-.img-follower {
+.img-follow {
     width: 127px;
     height: 117px;
     border-radius: 5px;
@@ -91,7 +91,7 @@
     text-align: center;
     margin: 20px;
 }
-.name-follower {
+.name-follow {
     text-align: center;
 }
 .stars-wraper {
@@ -159,3 +159,10 @@
     color: red;
     text-align: center;
 }
+@media screen and (max-width: 650px) {
+    .stars-wraper {
+        display: absolute;
+
+    
+    }
+  }
