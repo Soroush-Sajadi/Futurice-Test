@@ -64,20 +64,17 @@
     background-color: #ea457d;
 }
 .info-follow {
-    width: 50%;
-    float: right;
-}
-.wrap-follower button {
-    text-align: center;
-    margin-top: 300px;
-}
-.wraper-follower {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     
     margin-left: 10px;
+}
+
+.wrap-follow {
+    width: 50%;
+    float: right;
     
     
 }
