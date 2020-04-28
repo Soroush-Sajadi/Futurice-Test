@@ -40,18 +40,19 @@ body {
     text-align: center;
     margin-top: 50px;
 }
+.user-profile-rep h3 {
+    color: white;
+}
 .img {
-    width: 167px;
-    height: 150px;
+    width: 221px;
+    height: 200px;
     -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     text-align: center;
     
 }
-.img h3 {
-    color: white;
-}
+
 .wraper-user-info-rep {
     display: flex;
     flex-direction: row;
@@ -69,9 +70,11 @@ body {
     -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
     box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
-    background-color: #ea457d;
+    background-color: white;
     transition: transform .4s;
+    border-radius: 25%;
 }
+
 .user-info-rep:hover {
     transform: scale(1.2);
 }
