@@ -7,7 +7,6 @@ export default class Following extends Component {
         this.state = {
           data: [],
         };
-        console.log(props)
       }
 
       getData = async(name) => {
@@ -32,7 +31,7 @@ export default class Following extends Component {
         }
       };
 
-    click = async (event) =>{
+    getFollowingName = async (event) =>{
       this.props.trigerUpdate(event.target.getAttribute('attr'))
     }
 
@@ -40,14 +39,17 @@ export default class Following extends Component {
         if (this.props.name !==null) {
     return (  
         <div className="wrap-follow">
-            {this.state.data.length !== 0 ? (<p className="following-number">Following: {this.state.data.length}</p>):null}
-            <div className="info-follow">
-                {this.state.data.map(item => <div className="follower">
-                <img className="img-follow" attr ={item.login} onClick={(arg)=>{ this.click(arg); this.props.trigerFetch(this, arg) }} src={item.avatar_url}/>
+          {this.state.data.length !== 0 ? (<p className="following-number">Following: {this.state.data.length}</p>):null}
+          <div className="info-follow">
+            {this.state.data.map(item => 
+              <div className="follower">
+                <img className="img-follow" 
+                  attr ={item.login} 
+                  onClick={(arg)=>{ this.getFollowingName(arg); this.props.trigerFetch(this, arg) }} 
+                  src={item.avatar_url}/>
                 <p className="name-follow">{item.login}</p>
-        </div>
-        )}
-        </div>
+              </div>)}
+          </div>
         </div>
     )
         } else {

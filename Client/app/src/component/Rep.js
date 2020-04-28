@@ -56,23 +56,23 @@ export default class Rep extends Component {
         return (  
             <div className="wrap">
                 <div className="wraper-input-rep">
-                <input className="input" type="text" placeholder="Who are you looking for?" onChange={ this.handleChange } />
-                <input className="button" type="button" value="Search" onClick={this.handleClick} />
+                  <input className="input" type="text" placeholder="Who are you looking for?" onChange={ this.handleChange } />
+                  <input className="button" type="button" value="Search" onClick={this.handleClick} />
                 </div>
                 <div className="user-profile-rep">
-                {this.state.pic !== null ? (<img className="img" src={this.state.pic}/>): null}
-                <h3>{this.state.owner}</h3>
+                  {this.state.pic !== null ? (<img className="img" src={this.state.pic}/>): null}
+                  <h3>{this.state.owner}</h3>
                 </div>
                 <div className="wraper-user-info-rep">
-                {this.state.data.map(item => <a attr={item.name} style={{display: "table-cell"}} onClick={this.click}  target={'_blank'} 
-                href={`https://github.com/${this.state.owner}/${this.state.projectName }` } className="user-info-rep"> 
-                <h4 >Project Name:</h4>
-                <p >{item.name}</p>
-                </a >)}
+                  {this.state.data.map(item => 
+                  <a attr={item.name} style={{display: "table-cell"}} onClick={this.click}  target={'_blank'} 
+                    href={`https://github.com/${this.state.owner}/${this.state.projectName }` } className="user-info-rep"> 
+                    <h4 >Project Name:</h4>
+                    <p >{item.name}</p>
+                  </a >)}
                 </div>
                 <Followers name={this.state.owner} trigerUpdate={this.updateInput} trigerFetch ={this.handleClick} />
                 <Following name={this.state.owner} trigerUpdate={this.updateInput} trigerFetch ={this.handleClick} />
-        <p>{this.props.follow}</p>
             </div>
         )
     }
