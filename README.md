@@ -5,7 +5,7 @@ There is a seach input and by typing a valid account username we will get inform
 
 ![](img/newScreenshot.png)
 ![](img/newScreenshot2.png)
-Finally you are able to reach information about followers and following</br>
+Finally you are able to reach information about followers and following by clicking will get access to their accounts</br>
 ![](img/newScreenshot3.png) </br>
 How to run the code? </br>
 After cloning the project, you need to use the command npm install in both server and client/app. When the install for both client/app and server finished you need use command npm start in client/app and npm restart in server.
