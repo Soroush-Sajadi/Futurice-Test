@@ -14,7 +14,11 @@ app.get('/:user', async (req, res) => {
     const user = req.params.user
     const fetchData = await fetch(`https://api.github.com/users/${user}/repos`);
     const starsData = await fetchData.json();
+    if (starsData.message === undefined) {
     res.json(starsData);
+    } else {
+      res.json(starsData.message);
+    }
   });
 app.get('/followers/:user', async (req, res) => {
   const user = req.params.user

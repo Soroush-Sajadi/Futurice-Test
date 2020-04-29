@@ -26,25 +26,32 @@ export default class Rep extends Component {
       }
     
        handleClick = async() => {
-         if(this.state.input !== null) {
+         if (this.state.input !== null) {
             await fetch(`http://localhost:3000/${this.state.input}`, {headers: {
               'Access-Control-Allow-Origin': '*'
             }})
               .then(response => response.json())
               .then(data => { this.setState( { data } )
             });
-            this.setState({pic: this.state.data[0].owner.avatar_url});
-            this.setState({owner: this.state.data[0].owner.login})
-          }  if(this.state.newInput !== null) {
+            if (this.state.data !== 'Not Found') {
+              this.setState({pic: this.state.data[0].owner.avatar_url});
+              this.setState({owner: this.state.data[0].owner.login})
+            }
+            
+          } if (this.state.newInput !== null) {
               await fetch(`http://localhost:3000/${this.state.newInput}`, {headers: {
                 'Access-Control-Allow-Origin': '*'
               }})
                 .then(response => response.json())
                 .then(data => { this.setState( { data } )
               });
-              this.setState({pic: this.state.data[0].owner.avatar_url});
-              this.setState({owner: this.state.data[0].owner.login})
+              if (this.state.data !== 'Not Found') {
+                this.setState({pic: this.state.data[0].owner.avatar_url});
+                this.setState({owner: this.state.data[0].owner.login})
+              }
           } 
+          this.setState({newInput: null})
+          
       }
 
       click = (event) => {
@@ -64,7 +71,8 @@ export default class Rep extends Component {
                   <h3>{this.state.owner}</h3>
                 </div>
                 <div className="wraper-user-info-rep">
-                  {this.state.data.map(item => 
+                  {this.state.data === 'Not Found' ? <h3>{this.state.data}</h3>:
+                  this.state.data.map(item => 
                   <a attr={item.name} style={{display: "table-cell"}} onClick={this.click}  target={'_blank'} 
                     href={`https://github.com/${this.state.owner}/${this.state.projectName }` } className="user-info-rep"> 
                     <h4 >Project Name:</h4>

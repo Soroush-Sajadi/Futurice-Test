@@ -58,8 +58,10 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-   
-    
+      
+}
+.wraper-user-info-rep h3 {
+    color: white;
 }
 .user-info-rep {
     border: 1px solid black;
